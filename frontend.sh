@@ -1,7 +1,6 @@
 echo -e "\e[33mInstalling Nginx Server\e[0m"
 dnf install nginx -y &>>/tmp/roboshop.log
 
-
 echo -e "\e[33mRemoving old app content \e[om"
 rm -rf /usr/share/nginx/html/* &>>/tmp/roboshop.log
 
@@ -18,3 +17,4 @@ cp roboshop.conf /etc/nginx/default.d/roboshop.conf
 echo -e "\e[33mStarting Nginx Server \e[0m"
 systemctl enable nginx &>>/tmp/roboshop.log
 systemctl restart nginx &>>/tmp/roboshop.log
+
