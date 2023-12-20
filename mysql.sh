@@ -1,11 +1,11 @@
-echo -e "\e[33m Disable  MYSQL Default Server \e[0m"
+echo -e "\e[33m Disable  MySQL Default Server \e[0m"
 yum module disable mysql -y &>>/tmp/roboshop.log
 
 echo -e "\e[33m Copy MYSQL Repo File \e[0m"
 cp /home/centos/roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo &>>/tmp/roboshop.log
 
 
-echo -e "\e[33m Install MYSQL community server \e[0m"
+echo -e "\e[33m Install MySQL  community server \e[0m"
 yum install mysql-community-server -y &>>/tmp/roboshop.log
 
 echo -e "\e[33m Start MySQL Service \e[0m"
