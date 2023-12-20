@@ -4,6 +4,7 @@ dnf module disable mysql -y &>>/tmp/roboshop.log
 echo -e "\e[33m Copy MYSQL Repo File \e[0m"
 cp /home/centos/roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo &>>/tmp/roboshop.log
 
+
 echo -e "\e[33m Install MYSQL community server \e[0m"
 dnf install mysql-community-server -y &>>/tmp/roboshop.log
 
