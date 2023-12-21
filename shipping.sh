@@ -25,7 +25,7 @@ dnf install mysql -y &>>/tmp/roboshop.log
 echo -e "\e[33mLoad Schema \e[0m"
 mysql -h mysql-dev.afroz1.online -uroot -pRoboShop@1 < /app/schema/shipping.sql &>>/tmp/roboshop.log
 
-echo -e "\e[33m Setup SystemD File \e[0m"
+echo -e "\e[33mSetup SystemD File \e[0m"
 cp /home/centos/roboshop-shell/shipping.services /etc/systemd/system/shipping.service &>>/tmp/roboshop.log
 
 echo -e "\e[33mStart Shipping Service Maven \e[0m"
