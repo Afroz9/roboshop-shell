@@ -11,7 +11,7 @@ mkdir /app &>>/tmp/roboshop.log
 echo -e "\e[33mDownload application Content \e[0m"
 curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip &>>/tmp/roboshop.log
 
-echo -e"\e[33mExtract Application Content \e[0m "
+echo -e "\e[33mExtract Application Content \e[0m "
 cd /app
 unzip /tmp/shipping.zip &>>/tmp/roboshop.log
 
