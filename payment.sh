@@ -25,4 +25,3 @@ echo -e "\e[33m Start the service payment \e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log
 systemctl enable payment &>>/tmp/roboshop.log
 systemctl restart payment &>>/tmp/roboshop.log
-
