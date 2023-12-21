@@ -19,7 +19,7 @@ echo -e "\e[33mDownload Maven dependencies \e[0m"
 mvn clean package &>>/tmp/roboshop.log
 mv target/shipping-1.0.jar shipping.jar &>>/tmp/roboshop.log
 
-echo -e "\e[3333mInstall Maven Client \e[0m"
+echo -e "\e[33mInstall Maven Client \e[0m"
 dnf install mysql -y &>>/tmp/roboshop.log
 
 echo -e "\e[33mLoad Schema \e[0m"
