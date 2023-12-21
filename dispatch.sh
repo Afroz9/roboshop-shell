@@ -8,7 +8,7 @@ useradd roboshop &>>/tmp/roboshop.log
 
 
 echo -e "\e[33m Create App directory\e[0m"
-rm -rf/app &>>/tmp/roboshop.log
+rm -rf /app &>>/tmp/roboshop.log
 mkdir /app
 
 echo -e "\e[33m Download the application code to created app directory\e[0m"
