@@ -32,3 +32,4 @@ echo -e "\e[33mStart Shipping Service Maven \e[0m"
 systemctl daemon-reload &>>/tmp/roboshop.log
 systemctl enable shipping &>>/tmp/roboshop.log
 systemctl restart shipping &>>/tmp/roboshop.log
+
