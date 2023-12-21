@@ -8,10 +8,10 @@ echo -e "\e[33mCreate Application Directory \e[0m"
 rm -rf /app &>>/tmp/roboshop.log
 mkdir /app &>>/tmp/roboshop.log
 
-echo -e "\e[33m Download application Content \e[0m"
+echo -e "\e[33mDownload application Content \e[0m"
 curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip &>>/tmp/roboshop.log
 
-echo -e"\e[33m Extract Application Content \e[0m "
+echo -e"\e[33mExtract Application Content \e[0m "
 cd /app
 unzip /tmp/shipping.zip &>>/tmp/roboshop.log
 
