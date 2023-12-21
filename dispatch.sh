@@ -8,8 +8,7 @@ useradd roboshop &>>/tmp/roboshop.log
 
 
 echo -e "\e[33m Create App directory\e[0m"
-mkdir /app
-
+mkdir /app  &>>/tmp/roboshop.log
 
 echo -e "\e[33m Download the application code to created app directory\e[0m"
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip &>>/tmp/roboshop.log
