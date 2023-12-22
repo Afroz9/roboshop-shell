@@ -1,5 +1,5 @@
 source common.sh
-commopent=shipping
+comopent=shipping
 
 maven
 
