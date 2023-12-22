@@ -1,3 +1,6 @@
+component=catalogue
+
+
 echo -e "\e[33mConfiguration NodeJS Repos\e[0m"
 dnf module disable nodejs -y &>>/tmp/roboshop.log
 dnf module enable nodejs:18 -y &>>/tmp/roboshop.log
