@@ -74,7 +74,7 @@ mongo_schema_setup(){
   mongo --host mongodb-dev.afroz1.online <${app_path}/schema/$component.js &>>$log_file
 
 }
-mysql_schema_setup(){
+mysql_schema_setup() {
   echo -e "${color}Install Maven Client ${nocolor}"
     dnf install mysql -y &>>$log_file
 
