@@ -41,7 +41,7 @@ systemctl restart $component &>>/tmp/roboshop.log
 echo -e "${color} Installing Nginx Server ${nocolor}"
 cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/roboshop.log
 
-echo -e "${color}Copy MongoDB Repo File ${nocolor}"
+echo -e "${color} Copy MongoDB Repo File ${nocolor}"
 dnf install mongodb-org-shell -y &>>/tmp/roboshop.log
 
 echo -e "${color} Load Schema ${nocolor}"
