@@ -1,5 +1,5 @@
 
-color="\e[35m"
+color="\e[33m"
 nocolor="${nocolor}"
 log_file="&>>$log_file"
 app_path="/app"
