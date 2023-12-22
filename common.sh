@@ -79,7 +79,7 @@ mysql_schema_setup(){
     dnf install mysql -y &>>$log_file
 
     echo -e "${color}Load Schema ${nocolor}"
-    mysql -h mysql-dev.afroz1.online -uroot -pRoboShop@1 < /app/schema/${component}.sql &>>$log_file
+    mysql -h mysql-dev.afroz1.online -uroot -pRoboShop@1 </app/schema/${component}.sql &>>$log_file
 }
 
 
