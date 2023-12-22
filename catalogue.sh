@@ -45,5 +45,5 @@ cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>/tmp/ro
 echo -e "${color}Copy MongoDB Repo File${nocolor}"
 dnf install mongodb-org-shell -y &>>/tmp/roboshop.log
 
-echo -e "${color} Load Schema${nocolor}"
+echo -e "${color} Load Schema ${nocolor}"
 mongo --host mongodb-dev.afroz1.online </app/schema/$component.js &>>/tmp/roboshop.log
