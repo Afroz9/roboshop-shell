@@ -2,7 +2,6 @@ component=catalogue
 color="\e[36m"
 nocolor="\e[0m"
 
-
 echo -e "${color} Configuration NodeJS Repos ${nocolor}"
 dnf module disable nodejs -y &>>/tmp/roboshop.log
 dnf module enable nodejs:18 -y &>>/tmp/roboshop.log
