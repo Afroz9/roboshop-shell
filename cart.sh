@@ -1,3 +1,12 @@
+component=cart
+color="\e[36m"
+nocolor="\e[0m"
+log_file="/tmp/roboshop.log"
+app_path="/app"
+
+
+
+
 echo -e "\e[33mConfiguration NodeJS Repos\e[0m"
 dnf module disable nodejs -y &>>/tmp/roboshop.log
 dnf module enable nodejs:18 -y &>>/tmp/roboshop.log
