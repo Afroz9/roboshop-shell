@@ -99,7 +99,7 @@ maven(){
 }
 
 python(){
-  echo -e "${color} Install Python 3.6 ${nocolor}"
+  echo -e "${color}Install Python 3.6 ${nocolor}"
   dnf install python36 gcc python3-devel -y &>>/tmp/roboshop.log
 
  app_presetup
