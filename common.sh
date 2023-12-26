@@ -24,7 +24,6 @@ app_presetup(){
 
 
 
-
       echo -e "${color} Download application Content ${nocolor}"
         curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
       if [ $? -eq 0 ]; then
