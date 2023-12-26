@@ -27,9 +27,9 @@ app_presetup(){
     echo $?
 }
 
-    systemd_setup(){
+    systemd_setup() {
       echo -e "${color}Setup SystemD File ${nocolor}"
-        cp /home/centos/roboshop-shell/$component.services /etc/systemd/system/$component.service &>>$log_file
+        cp /home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service &>>$log_file
         echo $?
 
         echo -e "${color}Start Shipping Service Maven ${nocolor}"
