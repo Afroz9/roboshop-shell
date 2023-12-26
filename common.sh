@@ -9,17 +9,13 @@ app_presetup(){
     useradd roboshop &>>$log_file
     echo $?
 
-
-
-
     echo -e "${color}Create Application Directory ${nocolor}"
       rm -rf /app &>>$log_file
       mkdir /app &>>$log_file
+      echo $?
 
-      echo -e "${color}Create Application Directory ${nocolor}"
-        rm -rf ${app_path} &>>$log_file
-        mkdir ${app_path}
-       echo $?
+
+
 
       echo -e "${color}Download application Content ${nocolor}"
         curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
