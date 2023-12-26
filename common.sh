@@ -26,15 +26,16 @@ app_presetup(){
     unzip /tmp/$component.zip &>>$log_file
     echo $?
 }
+
     systemd_setup(){
       echo -e "${color}Setup SystemD File ${nocolor}"
-        cp /home/centos/roboshop-shell/shipping.services /etc/systemd/system/shipping.service &>>$log_file
+        cp /home/centos/roboshop-shell/$component.services /etc/systemd/system/$component.service &>>$log_file
         echo $?
 
         echo -e "${color}Start Shipping Service Maven ${nocolor}"
         systemctl daemon-reload &>>$log_file
-        systemctl enable shipping &>>$log_file
-        systemctl restart shipping &>>$log_file
+        systemctl enable $component &>>$log_file
+        systemctl restart $component &>>$log_file
         echo $?
 
 }
