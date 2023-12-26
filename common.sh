@@ -7,36 +7,60 @@ app_path="/app"
 app_presetup(){
   echo -e "${color} Add Application User ${nocolor}"
     useradd roboshop &>>$log_file
-    echo $?
+    if [ $? -eq 0 ]; then
+        echo SUCCESS
+      else
+        echo [ FALSE ]
+        fi
 
     echo -e "${color} Create Application Directory ${nocolor}"
       rm -rf /app &>>$log_file
       mkdir /app &>>$log_file
-      echo $?
+      if [ $? -eq 0 ]; then
+          echo SUCCESS
+        else
+          echo [ FALSE ]
+          fi
 
 
 
 
       echo -e "${color} Download application Content ${nocolor}"
         curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
-      echo $?
+      if [ $? -eq 0 ]; then
+          echo SUCCESS
+        else
+          echo [ FALSE ]
+          fi
 
     echo -e "${color} Extract Application Content ${nocolor}"
     cd ${app_path}
     unzip /tmp/$component.zip &>>$log_file
-    echo $?
+    if [ $? -eq 0 ]; then
+        echo SUCCESS
+      else
+        echo [ FALSE ]
+        fi
 }
 
     systemd_setup() {
       echo -e "${color} Setup SystemD File ${nocolor}"
         cp /home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service &>>$log_file
-        echo $?
+        if [ $? -eq 0 ]; then
+            echo SUCCESS
+          else
+            echo [ FALSE ]
+            fi
 
         echo -e "${color} Start Shipping Service Maven ${nocolor}"
         systemctl daemon-reload &>>$log_file
         systemctl enable $component &>>$log_file
         systemctl restart $component &>>$log_file
-        echo $?
+        if [ $? -eq 0 ]; then
+            echo SUCCESS
+          else
+            echo [ FALSE ]
+            fi
 
 }
 
@@ -99,7 +123,11 @@ maven(){
 python(){
   echo -e "${color} Install Python 3.6 ${nocolor}"
   dnf install python36 gcc python3-devel -y &>>/tmp/roboshop.log
-  echo $?
+  if [ $? -eq 0 ]; then
+      echo SUCCESS
+    else
+      echo [ FALSE ]
+      fi
 
 
  app_presetup
@@ -107,8 +135,11 @@ python(){
   echo -e "${color} Install Application dependencies ${nocolor}"
   cd /app
   pip3.6 install -r requirements.txt &>>/tmp/roboshop.log
-  echo $?
-
+  if [ $? -eq 0 ]; then
+    echo SUCCESS
+  else
+    echo [ FALSE ]
+    fi
   systemd_setup
 
 }
