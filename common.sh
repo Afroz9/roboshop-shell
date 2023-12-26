@@ -10,7 +10,7 @@ app_presetup(){
     if [ $? -eq 0 ]; then
         echo SUCCESS
       else
-        echo [ FALSE ]
+        echo FAILURE
         fi
 
     echo -e "${color} Create Application Directory ${nocolor}"
@@ -27,29 +27,29 @@ app_presetup(){
       echo -e "${color} Download application Content ${nocolor}"
         curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
       if [ $? -eq 0 ]; then
-          echo SUCCESS
-        else
-          echo [ FALSE ]
-          fi
+                echo SUCCESS
+              else
+                echo FAILURE
+                fi
 
     echo -e "${color} Extract Application Content ${nocolor}"
     cd ${app_path}
     unzip /tmp/$component.zip &>>$log_file
     if [ $? -eq 0 ]; then
-        echo SUCCESS
-      else
-        echo [ FALSE ]
-        fi
+              echo SUCCESS
+            else
+              echo FAILURE
+              fi
 }
 
     systemd_setup() {
       echo -e "${color} Setup SystemD File ${nocolor}"
         cp /home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service &>>$log_file
         if [ $? -eq 0 ]; then
-            echo SUCCESS
-          else
-            echo [ FALSE ]
-            fi
+                  echo SUCCESS
+                else
+                  echo FAILURE
+                  fi
 
         echo -e "${color} Start Shipping Service Maven ${nocolor}"
         systemctl daemon-reload &>>$log_file
@@ -58,7 +58,7 @@ app_presetup(){
         if [ $? -eq 0 ]; then
             echo SUCCESS
           else
-            echo [ FALSE ]
+            echo FAILURE
             fi
 
 }
@@ -125,7 +125,7 @@ python(){
   if [ $? -eq 0 ]; then
       echo SUCCESS
     else
-      echo [ FALSE ]
+      echo FAILURE
       fi
 
 
@@ -137,7 +137,7 @@ python(){
   if [ $? -eq 0 ]; then
     echo SUCCESS
   else
-    echo [ FALSE ]
+    echo FAILURE
     fi
   systemd_setup
 
