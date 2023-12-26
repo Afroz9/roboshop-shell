@@ -19,7 +19,7 @@ app_presetup(){
       if [ $? -eq 0 ]; then
           echo SUCCESS
         else
-          echo [ FALSE ]
+          echo FAILURE
           fi
 
 
