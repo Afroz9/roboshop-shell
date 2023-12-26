@@ -28,7 +28,7 @@ app_presetup(){
 }
 
     systemd_setup(){
-      echo -e "${color}Setup SystemD File ${nocolor}"
+      echo -e "${color} Setup SystemD File ${nocolor}"
         cp /home/centos/roboshop-shell/$component.services /etc/systemd/system/$component.service &>>$log_file
         echo $?
 
