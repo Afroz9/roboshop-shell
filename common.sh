@@ -7,7 +7,7 @@ app_path="/app"
 app_presetup(){
   echo -e "${color} Add Application User ${nocolor}"
   id roboshop &>>$log_file
-  if [ $? -el to 1 ]; then
+  if [ $? -eq to 1 ]; then
     useradd roboshop &>>$log_file
   fi
     if [ $? -eq 0 ]; then
@@ -24,8 +24,6 @@ app_presetup(){
         else
           echo FAILURE
           fi
-
-
 
       echo -e "${color} Download application Content ${nocolor}"
         curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>$log_file
