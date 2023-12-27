@@ -63,7 +63,6 @@ app_presetup(){
           else
             echo FAILURE
             fi
-
 }
 
 nodejs() {
