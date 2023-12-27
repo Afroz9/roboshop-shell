@@ -10,11 +10,12 @@ app_presetup() {
   if [ $? -eq to 1 ]; then
     useradd roboshop &>>$log_file
   fi
-    if [ $? -eq 0 ]; then
-        echo SUCCESS
-      else
-        echo FAILURE
-        fi
+
+  if [ $? -eq 0 ]; then
+      echo SUCCESS
+  else
+      echo FAILURE
+  fi
 
     echo -e "${color} Create Application Directory ${nocolor}"
       rm -rf /app &>>$log_file
