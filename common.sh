@@ -39,6 +39,7 @@ stat_check $?
     systemd_setup() {
       echo -e "${color} Setup SystemD File ${nocolor}"
         cp /home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service &>>$log_file
+        sed -i -e "s/roboshop_app_password/$roboshop_app_password/" /home/centos/roboshop-shell/$component.service
         stat_check $?
 
         echo -e "${color} Start Shipping Service Maven ${nocolor}"
@@ -117,7 +118,7 @@ python(){
   pip3.6 install -r requirements.txt &>>/tmp/roboshop.log
   stat_check $?
 
-  sed -i -e "s/roboshop_app_password/$1/" /home/centos/roboshop-shell/$component.service
+
 
   systemd_setup
 
