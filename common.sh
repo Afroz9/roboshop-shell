@@ -4,7 +4,7 @@ nocolor="${nocolor}"
 log_file="&>>$log_file"
 app_path="/app"
 
-app_presetup(){
+app_presetup() {
   echo -e "${color} Add Application User ${nocolor}"
   id roboshop &>>$log_file
   if [ $? -eq to 1 ]; then
