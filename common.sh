@@ -95,7 +95,7 @@ mongo_schema_setup(){
 
 }
 mysql_schema_setup() {
-  echo -e "${color} Install Maven Client ${nocolor}"
+  echo -e "${color} Install Mysql Client ${nocolor}"
     dnf install mysql -y &>>$log_file
     stat_check $?
 
