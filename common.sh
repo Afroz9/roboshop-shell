@@ -119,7 +119,6 @@ python(){
   stat_check $?
 
 
-
   systemd_setup
 
 }
