@@ -1,4 +1,5 @@
 source common.sh
+
 echo -e "${color}Installing Nginx Server ${nocolor}"
 dnf install nginx -y &>>/tmp/roboshop.log
 stat_check $?
