@@ -3,12 +3,18 @@ color="\e[36m"
 nocolor="${nocolor}"
 log_file="&>>$log_file"
 app_path="/app"
+user_id=$(id -u)
+if [ $user_id -ne 0 ]; then
+  echo script should be running with sudo
+  exit 1
+fi
 
 stat_check() {
   if [ $1 -eq 0 ]; then
         echo SUCCESS
     else
         echo FAILURE
+        exit 1
     fi
 }
 
