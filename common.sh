@@ -85,6 +85,7 @@ mongo_schema_setup() {
   stat_check $?
 }
 
+
 mysql_schema_setup() {
   echo -e "${color} Install MySQL Client ${nocolor}"
   yum install mysql -y  &>>$log_file
@@ -94,6 +95,7 @@ mysql_schema_setup() {
   mysql -h mysql-dev.devopsb73.store -uroot -p${mysql_root_password} </app/schema/${component}.sql   &>>$log_file
   stat_check $?
 }
+
 
 maven() {
   echo -e "${color} Install Maven ${nocolor}"
