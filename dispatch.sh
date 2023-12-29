@@ -5,7 +5,6 @@ dnf install golang -y &>>/tmp/roboshop.log
 echo -e "{color} Create Application User{nocolor}"
 useradd roboshop &>>/tmp/roboshop.log
 
-
 echo -e "{color} Create App directory{nocolor}"
 rm -rf /app &>>/tmp/roboshop.log
 mkdir /app
