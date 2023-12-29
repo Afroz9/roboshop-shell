@@ -2,7 +2,6 @@
 echo -e "\e[33m Install GoLang\e[0m"
 dnf install golang -y &>>/tmp/roboshop.log
 
-
 echo -e "\e[33m Create Application User\e[0m"
 useradd roboshop &>>/tmp/roboshop.log
 
