@@ -21,3 +21,4 @@ echo -e " ${color}  Add RabbitMQ Application User ${nocolor} "
 rabbitmqctl add_user roboshop $1 &>>/tmp/roboshop.log
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>/tmp/roboshop.log
 stat_check $?
+
