@@ -12,9 +12,13 @@ Environment=AMQP_HOST=rabbitmq-dev.afroz1.store
 Environment=AMQP_USER=roboshop
 Environment=AMQP_PASS=roboshop_app_password
 
+
+
 ExecStart=/usr/local/bin/uwsgi --ini payment.ini
 ExecStop=/bin/kill -9 $MAINPID
 SyslogIdentifier=payment
+
+
 
 [Install]
 WantedBy=multi-user.target

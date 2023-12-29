@@ -1,4 +1,6 @@
+
 source common.sh
+
 
 echo -e " ${color}  Configure Erlang repos  ${nocolor} "
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>>/tmp/roboshop.log
@@ -7,6 +9,7 @@ stat_check $?
 echo -e " ${color}  Configure RabbitMQ Repos  ${nocolor} "
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>/tmp/roboshop.log
 stat_check $?
+
 
 echo -e " ${color}  Install RabbitMQ Server  ${nocolor} "
 yum install rabbitmq-server -y &>>/tmp/roboshop.log
