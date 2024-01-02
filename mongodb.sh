@@ -15,7 +15,6 @@ sed -i  's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat_check $?
 
 
-
 echo -e "${color} Start Mongodb Server ${nocolor} "
 systemctl enable mongod &>>/tmp/roboshop.log
 systemctl restart mongod &>>/tmp/roboshop.log
